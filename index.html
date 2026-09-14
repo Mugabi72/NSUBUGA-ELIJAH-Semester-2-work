@@ -1,299 +1,159 @@
-```css
-/* =========================
-   FARMGRID - GLOBAL STYLES
-   ========================= */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+    <title>FARMGRID | Home</title>
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    line-height: 1.6;
-    background-color: #f4f8f1;
-    color: #222;
-}
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
 
-/* =========================
-   HEADER
-   ========================= */
+<body>
 
-header {
-    background-color: #1b5e20;
-    color: white;
-    padding: 20px;
-    text-align: center;
-}
+    <!-- HEADER -->
+    <header>
+        <h1>FARMGRID</h1>
 
-header h1 {
-    font-size: 2rem;
-    margin-bottom: 15px;
-}
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
 
-/* =========================
-   NAVIGATION
-   Mobile First
-   ========================= */
 
-nav {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
+    <!-- MAIN CONTENT -->
+    <main>
 
-nav a {
-    color: white;
-    text-decoration: none;
-    padding: 10px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
+        <!-- HERO SECTION -->
+        <section class="hero">
 
-nav a:hover,
-nav a:focus {
-    background-color: #388e3c;
-    outline: 2px solid white;
-    outline-offset: 2px;
-}
+            <div class="hero-content">
+                <h2>Growing a Better Future</h2>
 
-/* =========================
-   MAIN CONTENT
-   ========================= */
+                <p>
+                    Welcome to FARMGRID — connecting farmers, technology,
+                    agriculture and opportunities for a more sustainable future.
+                </p>
 
-main {
-    width: 100%;
-}
+                <a href="about.html">Explore FARMGRID</a>
+            </div>
 
-/* =========================
-   HERO SECTION
-   ========================= */
+        </section>
 
-.hero {
-    min-height: 70vh;
-    padding: 60px 20px;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+        <!-- INTRODUCTION -->
+        <section class="intro">
 
-    text-align: center;
+            <div class="intro-text">
+                <h2>Welcome to FARMGRID</h2>
 
-    background:
-        linear-gradient(rgba(0, 70, 0, 0.55), rgba(0, 70, 0, 0.55)),
-        url("images/farm.jpg");
+                <p>
+                    Agriculture is at the heart of our communities. FARMGRID
+                    provides useful information about farming, agricultural
+                    innovation, crops, technology and opportunities.
+                </p>
 
-    background-size: cover;
-    background-position: center;
+                <p>
+                    Our goal is to encourage modern, productive and sustainable
+                    agriculture.
+                </p>
+            </div>
 
-    color: white;
-}
+            <div class="intro-image">
+                <img
+                    src="https://www.awointernational.de/fileadmin/_processed_/d/a/csm_2025_Uganda_RICE_EZ_Copyright_AWO_International__1__55254c5b1e.jpg"
+                    alt="Ugandan farmer standing in a maize field">
+            </div>
 
-.hero h2 {
-    font-size: 2.2rem;
-    margin-bottom: 15px;
-}
+        </section>
 
-.hero p {
-    max-width: 600px;
-    margin-bottom: 25px;
-    font-size: 1.05rem;
-}
 
-.hero a {
-    display: inline-block;
-    background-color: #ffb300;
-    color: #222;
-    text-decoration: none;
-    padding: 12px 22px;
-    border-radius: 6px;
-    font-weight: bold;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
+        <!-- SERVICES -->
+        <section class="services">
 
-.hero a:hover,
-.hero a:focus {
-    background-color: #ffc107;
-    transform: translateY(-3px);
-    outline: 2px solid white;
-    outline-offset: 3px;
-}
+            <h2>What We Offer</h2>
 
-/* =========================
-   INTRODUCTION
-   ========================= */
+            <!-- CARD 1 -->
+            <div class="service-box">
 
-.intro {
-    padding: 50px 20px;
-    text-align: center;
-    background-color: white;
-}
+                <img
+                    src="https://cdn.sanity.io/images/bqmgl73f/production/a4c6b843edfae9f6bdc38abfe1654a726f21b4a8-2000x1334.jpg"
+                    alt="Farmers operating a tractor">
 
-.intro h2 {
-    color: #1b5e20;
-    margin-bottom: 15px;
-    font-size: 1.8rem;
-}
+                <h3>Modern Farming</h3>
 
-.intro p {
-    max-width: 700px;
-    margin: auto;
-}
+                <p>
+                    Learn about modern farming methods, machinery and
+                    agricultural technology.
+                </p>
 
-/* =========================
-   SERVICES
-   ========================= */
+            </div>
 
-.services {
-    padding: 50px 20px;
-    background-color: #e8f5e9;
 
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
+            <!-- CARD 2 -->
+            <div class="service-box">
 
-.services h2 {
-    width: 100%;
-    text-align: center;
-    color: #1b5e20;
-    margin-bottom: 10px;
-}
+                <img
+                    src="https://www.snv.org/assets/images/f/191310/5760x3840/b81d260161/the-farmer-couple-works-together-in-their-banana-plantation-weeding-earthing-up-and-pruning-to.jpg"
+                    alt="Farmers working together on a banana plantation">
 
-/* Service Cards */
+                <h3>Agricultural Knowledge</h3>
 
-.service-box {
-    background-color: white;
-    padding: 25px;
-    border-radius: 10px;
+                <p>
+                    Discover useful information about crops, farming practices
+                    and sustainable agriculture.
+                </p>
 
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+            </div>
 
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
 
-.service-box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
-}
+            <!-- CARD 3 -->
+            <div class="service-box">
 
-.service-box h3 {
-    color: #2e7d32;
-    margin-bottom: 10px;
-}
+                <img
+                    src="https://www.welthungerhilfe.org/fileadmin/_processed_/b/4/csm_2021-agrishare-ali-sonko-ananas-ernte_fd6aef5c6b.jpg"
+                    alt="Farmer harvesting pineapples">
 
-/* =========================
-   FOOTER
-   ========================= */
+                <h3>Farmer Opportunities</h3>
 
-footer {
-    background-color: #123b16;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    margin-top: 0;
-}
+                <p>
+                    Explore agricultural opportunities, markets and ideas that
+                    can support farmers and communities.
+                </p>
 
-/* =========================
-   RESPONSIVE DESIGN
-   Tablet / Desktop
-   ========================= */
+            </div>
 
-@media (min-width: 768px) {
+        </section>
 
-    header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 20px 50px;
-    }
 
-    header h1 {
-        margin-bottom: 0;
-    }
+        <!-- CALL TO ACTION -->
+        <section class="cta">
 
-    nav {
-        flex-direction: row;
-        align-items: center;
-        gap: 15px;
-    }
+            <h2>Let Us Grow Together</h2>
 
-    nav a {
-        padding: 8px 14px;
-    }
+            <p>
+                Discover more about FARMGRID and the future of agriculture.
+            </p>
 
-    .hero {
-        min-height: 80vh;
-        padding: 80px 50px;
-    }
+            <a href="contact.html">Contact Us</a>
 
-    .hero h2 {
-        font-size: 3.2rem;
-    }
+        </section>
 
-    .hero p {
-        font-size: 1.2rem;
-    }
+    </main>
 
-    .intro {
-        padding: 70px 50px;
-    }
 
-    .services {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 25px;
-        padding: 70px 50px;
-    }
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 FARMGRID. All Rights Reserved.</p>
+    </footer>
 
-    .services h2 {
-        grid-column: 1 / -1;
-    }
-}
 
-/* =========================
-   LARGE SCREENS
-   ========================= */
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
 
-@media (min-width: 1200px) {
-
-    .hero h2 {
-        font-size: 4rem;
-    }
-
-    .hero p {
-        font-size: 1.3rem;
-    }
-
-    .services {
-        padding-left: 100px;
-        padding-right: 100px;
-    }
-}
-
-/* =========================
-   RESPONSIVE IMAGES
-   ========================= */
-
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
-/* =========================
-   ACCESSIBILITY
-   ========================= */
-
-a:focus,
-button:focus,
-input:focus,
-textarea:focus,
-select:focus {
-    outline: 3px solid #ffb300;
-    outline-offset: 3px;
-}
-```
-
+</body>
+</html>
