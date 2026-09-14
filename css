@@ -1,9 +1,9 @@
 ```css
-/* =========================
-   FARMGRID - GLOBAL STYLES
-   ========================= */
 
-* {
+   FARMGRID - GLOBAL STYLES
+   
+
+{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -16,9 +16,9 @@ body {
     color: #222;
 }
 
-/* =========================
+
    HEADER
-   ========================= */
+   
 
 header {
     background-color: #1b5e20;
@@ -32,10 +32,10 @@ header h1 {
     margin-bottom: 15px;
 }
 
-/* =========================
+
    NAVIGATION
    Mobile First
-   ========================= */
+   
 
 nav {
     display: flex;
@@ -58,17 +58,17 @@ nav a:focus {
     outline-offset: 2px;
 }
 
-/* =========================
+
    MAIN CONTENT
-   ========================= */
+   
 
 main {
     width: 100%;
 }
 
-/* =========================
+
    HERO SECTION
-   ========================= */
+   
 
 .hero {
     min-height: 70vh;
@@ -121,9 +121,9 @@ main {
     outline-offset: 3px;
 }
 
-/* =========================
+
    INTRODUCTION
-   ========================= */
+   
 
 .intro {
     padding: 50px 20px;
@@ -162,7 +162,7 @@ main {
     margin-bottom: 10px;
 }
 
-/* Service Cards */
+Service Cards 
 
 .service-box {
     background-color: white;
@@ -196,10 +196,10 @@ footer {
     margin-top: 0;
 }
 
-/* =========================
+
    RESPONSIVE DESIGN
    Tablet / Desktop
-   ========================= */
+   
 
 @media (min-width: 768px) {
 
@@ -253,9 +253,9 @@ footer {
     }
 }
 
-/* =========================
+
    LARGE SCREENS
-   ========================= */
+
 
 @media (min-width: 1200px) {
 
@@ -273,9 +273,8 @@ footer {
     }
 }
 
-/* =========================
    RESPONSIVE IMAGES
-   ========================= */
+
 
 img {
     max-width: 100%;
@@ -283,9 +282,9 @@ img {
     display: block;
 }
 
-/* =========================
+
    ACCESSIBILITY
-   ========================= */
+   
 
 a:focus,
 button:focus,
