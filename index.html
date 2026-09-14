@@ -1,1 +1,299 @@
+```css
+/* =========================
+   FARMGRID - GLOBAL STYLES
+   ========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f8f1;
+    color: #222;
+}
+
+/* =========================
+   HEADER
+   ========================= */
+
+header {
+    background-color: #1b5e20;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+/* =========================
+   NAVIGATION
+   Mobile First
+   ========================= */
+
+nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover,
+nav a:focus {
+    background-color: #388e3c;
+    outline: 2px solid white;
+    outline-offset: 2px;
+}
+
+/* =========================
+   MAIN CONTENT
+   ========================= */
+
+main {
+    width: 100%;
+}
+
+/* =========================
+   HERO SECTION
+   ========================= */
+
+.hero {
+    min-height: 70vh;
+    padding: 60px 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background:
+        linear-gradient(rgba(0, 70, 0, 0.55), rgba(0, 70, 0, 0.55)),
+        url("images/farm.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    color: white;
+}
+
+.hero h2 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    max-width: 600px;
+    margin-bottom: 25px;
+    font-size: 1.05rem;
+}
+
+.hero a {
+    display: inline-block;
+    background-color: #ffb300;
+    color: #222;
+    text-decoration: none;
+    padding: 12px 22px;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.hero a:hover,
+.hero a:focus {
+    background-color: #ffc107;
+    transform: translateY(-3px);
+    outline: 2px solid white;
+    outline-offset: 3px;
+}
+
+/* =========================
+   INTRODUCTION
+   ========================= */
+
+.intro {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: white;
+}
+
+.intro h2 {
+    color: #1b5e20;
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+}
+
+.intro p {
+    max-width: 700px;
+    margin: auto;
+}
+
+/* =========================
+   SERVICES
+   ========================= */
+
+.services {
+    padding: 50px 20px;
+    background-color: #e8f5e9;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.services h2 {
+    width: 100%;
+    text-align: center;
+    color: #1b5e20;
+    margin-bottom: 10px;
+}
+
+/* Service Cards */
+
+.service-box {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+.service-box h3 {
+    color: #2e7d32;
+    margin-bottom: 10px;
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+
+footer {
+    background-color: #123b16;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 0;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+   Tablet / Desktop
+   ========================= */
+
+@media (min-width: 768px) {
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 50px;
+    }
+
+    header h1 {
+        margin-bottom: 0;
+    }
+
+    nav {
+        flex-direction: row;
+        align-items: center;
+        gap: 15px;
+    }
+
+    nav a {
+        padding: 8px 14px;
+    }
+
+    .hero {
+        min-height: 80vh;
+        padding: 80px 50px;
+    }
+
+    .hero h2 {
+        font-size: 3.2rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    .intro {
+        padding: 70px 50px;
+    }
+
+    .services {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+        padding: 70px 50px;
+    }
+
+    .services h2 {
+        grid-column: 1 / -1;
+    }
+}
+
+/* =========================
+   LARGE SCREENS
+   ========================= */
+
+@media (min-width: 1200px) {
+
+    .hero h2 {
+        font-size: 4rem;
+    }
+
+    .hero p {
+        font-size: 1.3rem;
+    }
+
+    .services {
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+}
+
+/* =========================
+   RESPONSIVE IMAGES
+   ========================= */
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* =========================
+   ACCESSIBILITY
+   ========================= */
+
+a:focus,
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+    outline: 3px solid #ffb300;
+    outline-offset: 3px;
+}
+```
 
