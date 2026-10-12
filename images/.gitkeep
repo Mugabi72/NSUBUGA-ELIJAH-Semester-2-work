@@ -1,1 +1,9 @@
-
+This file ensures Git tracks this directory.
+ This folder is intended to store user-uploaded profile pictures and media.
+ Keep empty directory for application log output.
+Do not delete this directory as server scripts write log files here.
+ Placeholders for temporary build artifacts.
+Files generated in this directory during execution are git-ignored.
+Ignore everything in this directory...
+ ...except for this file itself
+!.gitignore
