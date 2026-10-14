@@ -1,8 +1,6 @@
-```css
+css
 
    FARMGRID - GLOBAL STYLES
-   
-
 {
     margin: 0;
     padding: 0;
@@ -121,10 +119,8 @@ main {
     outline-offset: 3px;
 }
 
-
    INTRODUCTION
    
-
 .intro {
     padding: 50px 20px;
     text-align: center;
@@ -282,10 +278,8 @@ img {
     display: block;
 }
 
-
    ACCESSIBILITY
    
-
 a:focus,
 button:focus,
 input:focus,
@@ -295,4 +289,3 @@ select:focus {
     outline-offset: 3px;
 }
 ```
-
