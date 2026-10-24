@@ -284,8 +284,409 @@ a:focus,
 button:focus,
 input:focus,
 textarea:focus,
+
+
+css
+
+   FARMGRID - GLOBAL STYLES
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f8f1;
+    color: #222;
+}
+
+
+   HEADER
+   
+
+header {
+    background-color: #1b5e20;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+
+   NAVIGATION
+   Mobile First
+   
+
+nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover,
+nav a:focus {
+    background-color: #388e3c;
+    outline: 2px solid white;
+    outline-offset: 2px;
+}
+
+
+   MAIN CONTENT
+   
+
+main {
+    width: 100%;
+}
+
+
+   HERO SECTION
+   
+
+.hero {
+    min-height: 70vh;
+    padding: 60px 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background:
+        linear-gradient(rgba(0, 70, 0, 0.55), rgba(0, 70, 0, 0.55)),
+        url("images/farm.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    color: white;
+}
+
+.hero h2 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    max-width: 600px;
+    margin-bottom: 25px;
+    font-size: 1.05rem;
+}
+
+.hero a {
+    display: inline-block;
+    background-color: #ffb300;
+    color: #222;
+    text-decoration: none;
+    padding: 12px 22px;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.hero a:hover,
+.hero a:focus {
+    background-color: #ffc107;
+    transform: translateY(-3px);
+    outline: 2px solid white;
+    outline-offset: 3px;
+}
+
+   INTRODUCTION
+   
+.intro {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: white;
+}
+
+.intro h2 {
+    color: #1b5e20;
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+}
+
+.intro p {
+    max-width: 700px;
+    margin: auto;
+}
+
+/* =========================
+   SERVICES
+   ========================= */
+
+.services {
+    padding: 50px 20px;
+    background-color: #e8f5e9;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.services h2 {
+    width: 100%;
+    text-align: center;
+    color: #1b5e20;
+    margin-bottom: 10px;
+}
+
+Service Cards 
+
+.service-box {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+.service-box h3 {
+    color: #2e7d32;
+    margin-bottom: 10px;
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+
+footer {
+    background-color: #123b16;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 0;
+}
+
+
+   RESPONSIVE DESIGN
+   Tablet / Desktop
+   
+
+@media (min-width: 768px) {
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 50px;
+    }
+
+    header h1 {
+        margin-bottom: 0;
+    }
+
+    nav {
+        flex-direction: row;
+        align-items: center;
+        gap: 15px;
+    }
+
+    nav a {
+        padding: 8px 14px;
+    }
+
+    .hero {
+        min-height: 80vh;
+        padding: 80px 50px;
+    }
+
+    .hero h2 {
+        font-size: 3.2rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    .intro {
+        padding: 70px 50px;
+    }
+
+    .services {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+        padding: 70px 50px;
+    }
+
+    .services h2 {
+        grid-column: 1 / -1;
+    }
+}
+
+
+   LARGE SCREENS
+
+
+@media (min-width: 1200px) {
+
+    .hero h2 {
+        font-size: 4rem;
+    }
+
+    .hero p {
+        font-size: 1.3rem;
+    }
+
+    .services {
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+}
+
+   RESPONSIVE IMAGES
+
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+   ACCESSIBILITY
+   
+a:focus,
+button:focus,
+input:focus,
+textarea:focus,
 select:focus {
     outline: 3px solid #ffb300;
     outline-offset: 3px;
 }
 ```
+select:focus {
+    outline: 3px solid #ffb300;
+    outline-offset: 3px;
+}
+```
+
+ Notes on Your FarmGrid CSS (Mobile-First Responsive Design)
+
+ 1. What the stylesheet does
+It styles a farm website with a header and navigation, a hero banner, an intro section, three service cards and a footer. It is **mobile-first**: the base styles are for phones, and media queries add layouts for tablets and desktops.
+
+## 2. Problems in the pasted code
+
+1. **Missing `/* */` on most comments.** Headings like `FARMGRID - GLOBAL STYLES`, `HEADER`, `NAVIGATION` and `Service Cards` are plain text, so the browser treats them as broken CSS and may ignore the rules after them. Only the `SERVICES` and `FOOTER` comments are correct.
+2. **Missing `*` selector.** The first rule starts with `{ margin: 0; ... }` and has no selector. It should be `* { ... }`.
+3. **Stray `css` at the top and ` ``` ` at the bottom.** These are Markdown leftovers and must be removed from `style.css`.
+4. **Image path.** `url("images/farm.jpg")` only works if an `images` folder is in the same folder as the CSS file.
+
+Fix pattern:
+
+```css
+/* =========================
+   FARMGRID - GLOBAL STYLES
+   ========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Service Cards */
+.service-box { ... }
+
+/* =========================
+   RESPONSIVE DESIGN
+   Tablet / Desktop
+   ========================= */
+@media (min-width: 768px) { ... }
+```
+
+## 3. Key CSS concepts used
+
+| Concept | Where | Purpose |
+|---|---|---|
+| Universal selector `*` | global reset | Removes default margins and padding |
+| `box-sizing: border-box` | global reset | Padding and border count inside the element's width |
+| Element, class and pseudo-class selectors | `nav a:hover`, `.hero` | Target elements and states |
+| Flexbox | `nav`, `.hero`, `.services` | One-dimensional layout (row or column) |
+| CSS Grid | `.services` at 768px+ | Two-dimensional layout (3 equal columns) |
+| `grid-column: 1 / -1` | `.services h2` | Makes the heading span all columns |
+| `linear-gradient` over `url()` | `.hero` | Dark overlay on the background image |
+| `background-size: cover` | `.hero` | Image fills the whole area |
+| `vh` and `rem` units | hero, fonts | Relative to the viewport and root font size |
+| `transition` and `transform` | buttons, cards | Smooth hover animation |
+| `box-shadow`, `border-radius` | `.service-box` | Depth and rounded corners |
+| Media queries | 768px, 1200px | Change layout by screen width |
+| `max-width: 100%; height: auto` | `img` | Responsive images |
+| `:focus` and `outline` | links, inputs | Keyboard accessibility |
+
+ 4. Mobile-first breakpoints
+
+| Screen | Layout |
+|---|---|
+| Below 768px (phone) | Header and nav stacked; services in one column |
+| 768px and above (tablet/desktop) | Header and nav in a row; services in a 3-column grid; larger hero text |
+| 1200px and above (large screens) | Hero text larger; wider side padding on services |
+
+ 5. Colour scheme
+
+| Colour | Use |
+|---|---|
+| `#1b5e20` (dark green) | Header, headings |
+| `#2e7d32` / `#388e3c` | Card headings, nav hover |
+| `#ffb300` (amber) | Hero button, focus outline |
+| `#f4f8f1` / `#e8f5e9` | Page and section backgrounds |
+| `#123b16` | Footer |
+
+## 6. Matching HTML structure
+
+```html
+<header>
+  <h1>FarmGrid</h1>
+  <nav><a href="#">Home</a> <a href="#">Services</a> <a href="#">Contact</a></nav>
+</header>
+<main>
+  <section class="hero"><h2>...</h2><p>...</p><a href="#">Get Started</a></section>
+  <section class="intro"><h2>...</h2><p>...</p></section>
+  <section class="services">
+    <h2>Our Services</h2>
+    <div class="service-box"><h3>...</h3><p>...</p></div>
+    <!-- two more service boxes -->
+  </section>
+</main>
+<footer>...</footer>
+```
+
+Remember `<meta name="viewport" content="width=device-width, initial-scale=1.0">` in the `<head>`. Without it, media queries will not work properly on phones.
+
+## 7. Possible improvements
+- Use CSS variables (`--green: #1b5e20;`) so colours are defined once.
+- Add `scroll-behavior: smooth;` for smooth in-page navigation.
+- Add a `:focus-visible` rule instead of `:focus` so the outline shows only for keyboard users.
+- Add a `prefers-reduced-motion` media query to turn off animations for users who need it.
+- Make the header `position: sticky`.
+
+## 8. Points for an exam or report
+- **Mobile-first approach:** base styles for small screens, `min-width` queries for larger ones.
+- **Flexbox vs Grid:** Flexbox for one-direction layouts, Grid for rows and columns together.
+- **Accessibility:** visible focus outlines, good colour contrast, responsive images.
+- **Separation of concerns:** HTML for structure, CSS for presentation.
+- **Maintainability:** organised sections with clear comments.
+
+Want these notes as a Word document, or an exam-style Q&A on responsive design?
