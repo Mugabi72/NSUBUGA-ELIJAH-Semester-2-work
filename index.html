@@ -157,3 +157,102 @@
 
 </body>
 </html>
+
+
+Notes on Your FarmGrid HTML (index.html)
+1. What the page does
+
+It is the home page of a multi-page farming website. It has a header with navigation, a hero banner, an introduction with an image, three service cards, a call-to-action section and a footer. It links to style.css and script.js.
+
+2. Problems and things to check
+Missing CSS for new classes. Your stylesheet has no rules for .hero-content, .intro-text, .intro-image or .cta. The page will still display, but the CTA section will be unstyled and the intro will not sit side by side.
+script.js and other pages. The links to script.js, about.html, gallery.html and contact.html only work if those files exist in the same folder. Otherwise you get a 404 error.
+External images. The images are hotlinked from other websites. They can break if the owners move or block them. Download them into an images/ folder and use relative paths, and credit the sources.
+Image sizes. Large photos (e.g. 5760x3840) slow the page down. Resize them and add loading="lazy".
+
+Missing CSS to add:
+
+css
+.cta {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #1b5e20;
+    color: white;
+}
+
+.cta a {
+    display: inline-block;
+    margin-top: 20px;
+    background-color: #ffb300;
+    color: #222;
+    text-decoration: none;
+    padding: 12px 22px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.hero-content { max-width: 700px; }
+
+@media (min-width: 768px) {
+    .intro {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        align-items: center;
+        text-align: left;
+    }
+}
+3. Page structure
+Section	Tag	Purpose
+Header	<header> with <h1> and <nav>	Site name and navigation
+Hero	<section class="hero">	Main banner with a call to action
+Introduction	<section class="intro">	Text and image about FARMGRID
+Services	<section class="services">	Three .service-box cards
+Call to action	<section class="cta">	Encourages the visitor to make contact
+Footer	<footer>	Copyright notice
+4. Key HTML concepts used
+Concept	Where	Purpose
+<!DOCTYPE html>	first line	Tells the browser this is HTML5
+lang="en"	<html>	Helps screen readers and search engines
+<meta charset="UTF-8">	<head>	Displays special characters correctly
+Viewport meta tag	<head>	Required for mobile-first responsive design
+<title>	<head>	Text shown on the browser tab
+<link rel="stylesheet">	<head>	Connects the external CSS
+Semantic elements	header, nav, main, section, footer	Give the page meaning and improve accessibility and SEO
+Anchor <a href>	nav, buttons	Links between pages
+<img> with alt	intro, cards	Shows images and describes them for screen readers
+Heading hierarchy	h1, h2, h3	One h1, then h2 sections, then h3 card titles
+HTML comments	<!-- ... -->	Organise and explain code
+<script src> before </body>	bottom	Loads JavaScript after the page content
+&copy;	footer	HTML entity for the © symbol
+5. How HTML and CSS connect
+HTML	CSS rule	Effect
+<section class="hero">	.hero	Background image, overlay, centred text
+<a> inside the hero	.hero a	Amber button style
+<div class="service-box">	.service-box	White card with shadow and hover lift
+.services	Flex, then Grid at 768px	One column on phones, 3 columns on larger screens
+<img>	img { max-width: 100% }	Images never overflow
+6. Possible improvements
+Add <meta name="description" content="..."> for SEO.
+Add a favicon: <link rel="icon" href="images/logo.png">.
+Use <picture> or srcset for responsive image sizes.
+Add aria-current="page" to the active nav link.
+Add a “skip to content” link for keyboard users.
+Add a <button> menu toggle for mobile, controlled by script.js.
+Validate the page at validator.w3.org.
+7. Project folder structure
+farmgrid/
+├── index.html
+├── about.html
+├── gallery.html
+├── contact.html
+├── style.css
+├── script.js
+└── images/
+8. Points for an exam or report
+Semantic HTML: meaningful tags improve accessibility, SEO and readability.
+Separation of concerns: HTML for structure, CSS for style, JavaScript for behaviour.
+Responsive design: the viewport meta tag plus media queries.
+Accessibility: alt text, heading order, lang attribute, focus outlines.
+Performance: optimise images, load scripts at the bottom, use relative paths.
+Navigation: a consistent header on every page.
