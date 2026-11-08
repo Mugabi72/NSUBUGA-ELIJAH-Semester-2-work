@@ -256,3 +256,221 @@ Responsive design: the viewport meta tag plus media queries.
 Accessibility: alt text, heading order, lang attribute, focus outlines.
 Performance: optimise images, load scripts at the bottom, use relative paths.
 Navigation: a consistent header on every page.
+
+# More on the FarmGrid Site: Accessibility, Navigation and Structure
+
+Continuing the numbering from the notes above.
+
+## 9. Skip Link and `aria-current` in Practice
+
+```html
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header>
+    <nav aria-label="Main navigation">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="about.html">About</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <h1>Welcome to FarmGrid</h1>
+  </main>
+</body>
+```
+
+```css
+.skip-link {
+  position: absolute;
+  top: -100px;          /* hidden off-screen */
+  left: 8px;
+  background: #1b5e20;
+  color: #fff;
+  padding: 8px 14px;
+  z-index: 1000;
+}
+.skip-link:focus { top: 8px; }   /* appears when tabbed to */
+
+nav a[aria-current="page"] {
+  font-weight: bold;
+  border-bottom: 3px solid #1b5e20;
+}
+```
+
+| Feature | Why it matters |
+|---|---|
+| Skip link | Keyboard users jump past the menu straight to the content, instead of tabbing through every link on each page |
+| `aria-current="page"` | Tells screen readers which link is the current page; CSS can style it too |
+| `aria-label` on `<nav>` | Names the navigation region so screen readers can announce it |
+| `tabindex="-1"` on `<main>` | Lets the skip link move focus into the content reliably |
+
+Remember to move `aria-current="page"` to the correct link on each page (about.html, gallery.html, contact.html).
+
+## 10. Mobile Menu Toggle Button
+
+```html
+<button id="menu-toggle" class="menu-toggle"
+        aria-expanded="false" aria-controls="nav-menu">
+  Menu
+</button>
+
+<ul id="nav-menu" class="nav-menu">
+  <li><a href="index.html" aria-current="page">Home</a></li>
+  <li><a href="about.html">About</a></li>
+  <li><a href="gallery.html">Gallery</a></li>
+  <li><a href="contact.html">Contact</a></li>
+</ul>
+```
+
+```css
+.menu-toggle { display: none; }
+
+@media (max-width: 700px) {
+  .menu-toggle { display: block; }
+  .nav-menu { display: none; flex-direction: column; }
+  .nav-menu.open { display: flex; }
+}
+```
+
+```js
+const toggle = document.getElementById('menu-toggle');
+const menu = document.getElementById('nav-menu');
+
+toggle.addEventListener('click', () => {
+  const isOpen = menu.classList.toggle('open');
+  toggle.setAttribute('aria-expanded', isOpen);
+});
+```
+
+Use a real `<button>`, not a `<div>` or link, because buttons work with the keyboard (Enter and Space) automatically. `aria-expanded` tells screen reader users whether the menu is open or closed.
+
+## 11. Focus Styles
+
+Never remove focus outlines without replacing them.
+
+```css
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid #ff9800;
+  outline-offset: 2px;
+}
+```
+
+`:focus-visible` shows the outline for keyboard users but usually not for mouse clicks.
+
+## 12. Page Template Used on Every Page
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="FarmGrid: fresh farm produce and services.">
+  <title>About | FarmGrid</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- skip link, header, main, footer -->
+  <script src="script.js"></script>
+</body>
+</html>
+```
+
+| Part | Purpose |
+|---|---|
+| `lang="en"` | Helps screen readers pronounce text correctly |
+| `charset` | Displays all characters properly |
+| `viewport` | Makes the page scale correctly on phones |
+| `description` | Summary shown in search results (SEO) |
+| `<title>` | Unique per page; shown in the browser tab and search results |
+| Script at the bottom | The page loads and displays before JavaScript runs |
+
+## 13. Accessible Contact Form
+
+```html
+<form action="#" method="post">
+  <label for="name">Full name</label>
+  <input type="text" id="name" name="name" required>
+
+  <label for="email">Email</label>
+  <input type="email" id="email" name="email" required>
+
+  <label for="message">Message</label>
+  <textarea id="message" name="message" rows="5" required></textarea>
+
+  <button type="submit">Send message</button>
+</form>
+```
+
+Every input needs a `<label>` linked by matching `for` and `id`. This helps screen reader users and also makes the field easier to tap on phones.
+
+## 14. Accessible Gallery Images
+
+```html
+<figure>
+  <img src="images/harvest.jpg" alt="Workers harvesting tomatoes in the morning" loading="lazy">
+  <figcaption>Tomato harvest</figcaption>
+</figure>
+```
+
+- Describe what the image shows; do not write "image of...".
+- Use `alt=""` for purely decorative images so screen readers skip them.
+
+## 15. Validating Your Pages
+
+| Tool | What it checks |
+|---|---|
+| validator.w3.org | HTML errors (unclosed tags, missing attributes, duplicate IDs) |
+| jigsaw.w3.org/css-validator | CSS errors |
+| Lighthouse (Chrome DevTools) | Accessibility, performance, SEO and best practices scores |
+| Keyboard test | Press Tab through the whole page; can you reach everything and see where you are? |
+
+Common validator errors: missing `alt`, duplicate `id` values, missing `<title>`, and a `<li>` placed outside `<ul>`.
+
+## 16. Accessibility Checklist (WCAG basics)
+
+| Principle | Meaning | Example |
+|---|---|---|
+| Perceivable | Content can be seen or heard by everyone | Alt text, good contrast |
+| Operable | Everything works with a keyboard | Skip link, visible focus |
+| Understandable | Clear language and predictable layout | Same navigation on every page |
+| Robust | Works with different browsers and assistive tools | Valid, semantic HTML |
+
+Text contrast should be at least **4.5:1** against its background for normal text.
+
+## 17. Revision Questions
+
+1. What is the purpose of a skip link?
+2. What does `aria-current="page"` do?
+3. Why use a `<button>` instead of a `<div>` for the menu toggle?
+4. What does `aria-expanded` communicate?
+5. Why is the `lang` attribute important?
+6. Why should the script tag be placed at the bottom of `<body>`?
+7. How do you link a `<label>` to an `<input>`?
+8. Name three common errors the W3C validator catches.
+
+### Answers
+
+1. It lets keyboard and screen reader users bypass the repeated navigation and go straight to the main content.
+2. It identifies the link for the current page, so assistive technology can announce it and CSS can highlight it.
+3. A button is focusable and works with Enter and Space automatically, and screen readers announce it as a button.
+4. Whether the controlled element (the menu) is currently open (`true`) or closed (`false`).
+5. It tells screen readers and translation tools which language the page uses, so text is pronounced correctly.
+6. The HTML loads and displays first, so the page appears faster and the script can find the elements it needs.
+7. Give the input an `id` and set the label's `for` attribute to the same value.
+8. Missing `alt` attributes, duplicate `id` values, and unclosed or wrongly nested tags.
+
+## 18. More Exam Points
+
+- **Mobile-first design:** write CSS for small screens first, then add `min-width` media queries for larger screens.
+- **Consistent navigation:** the same header on every page reduces confusion and improves usability.
+- **Relative paths:** use `images/harvest.jpg`, not `C:/Users/...`, so the site works after deployment.
+- **Testing:** check in more than one browser, on a phone, and with the keyboard only.
+
+I can put the FarmGrid notes into a Word document if you'd like, or write the complete `index.html`, `style.css` and `script.js` for FarmGrid ready to paste.
+    
